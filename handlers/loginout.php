@@ -18,4 +18,14 @@ if (isset($_REQUEST['submit-button-entry'])) {
   header('Location: ../index.php');
 }
 
+if (isset($_REQUEST['submit-button-exit'])) {
+  $_SESSION['login'] = '';
+  $_SESSION['rights'] = '';
+
+  unset($_SESSION['login']);
+  unset($_SESSION['rights']);
+
+  header('Location: ../index.php');
+}
+
 ?>

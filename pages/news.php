@@ -18,7 +18,7 @@
 
       <div class="content">
         <?php
-          $query = "SELECT * FROM news";
+          $query = "SELECT * FROM news ORDER BY time DESC";
           $res = mysqli_query($date, $query);
 
           while ($news_item = mysqli_fetch_array($res, MYSQL_ASSOC)) {

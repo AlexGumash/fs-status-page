@@ -39,8 +39,8 @@
         </div>
 
       </div>
-      <div id="content">
-
+      <div id="content" style="width: 100%">
+        
       </div>
     </div>
   </body>
