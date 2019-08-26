@@ -7,7 +7,40 @@
   <head>
     <meta charset="utf-8">
     <title>FSR - Status</title>
-    <script type="text/javascript" src='../scripts/toggle.js'></script>
+
+    <script type="text/javascript">
+      $('.team').click(function(event) {
+        $(this).children('.statuses').show()
+      })
+
+      $('#close-statuses-button').click(function(event) {
+
+        $('#close-statuses-button').parent().hide()
+
+      })
+
+      function changeStatus(test_name, number, team_category) {
+        var test_status = $(event.target).val()
+        $.ajax({
+          type: "post",
+          url: "../handlers/change_status.php",
+          data: {car_number: number, test: test_name, status: test_status, category: team_category}
+        }).done(function(result){
+          console.log(result);
+        })
+      }
+      function changeWeight(number, team_category) {
+        var weight = $(event.target).val()
+        $.ajax({
+          type: "post",
+          url: "../handlers/change_weight.php",
+          data: {car_number: number, car_weight: weight, category: team_category}
+        }).done(function(result){
+          console.log(result);
+        })
+      }
+    </script>
+
   </head>
   <body>
     <div class="container-page">
@@ -38,7 +71,7 @@
             }
             $result2 = mysqli_query($date, $query2);
             $inspection = mysqli_fetch_array($result2, MYSQL_ASSOC);
-            $update_time = $inspection['update'];
+            $update_time = $inspection['last_update'];
         ?>
           <div class="team">
 
@@ -53,15 +86,42 @@
 
             <div class="statuses">
               <?php
+              include '../scripts/names.php';
               foreach ($inspection as $key => $value) {
-                ?>
-                <div class="status">
-                  <span><?php echo $key ?></span>
-                  <span><?php echo $value ?></span>
-                </div>
+                if ($key != 'id' && $key != 'car_number' && $key != 'last_update') {
+                  if ($key == 'weight') {
+                    ?>
+                      <div class="status">
+                        <span><?php echo $names[$key] ?></span>
+                        <input type="text" name="car_weight" value="<?php echo $inspection['weight']; ?>" style="width: 80px" onchange="changeWeight('<?php echo $team['number']?>', '<?php echo $team['category'] ?>')">
+                      </div>
+                    <?php
+                  } else {
+                  ?>
+                  <div class="status">
+                    <span><?php echo $names[$key] ?></span>
+                    <select class="" name="status-selector" onchange="changeStatus('<?php echo $key?>', '<?php echo $team['number']?>', '<?php echo $team['category'] ?>')">
+                      <option value="none" <?php if ($value == 'none') {
+                        echo "selected";
+                      } ?>>NONE</option>
+                      <option value="present" <?php if ($value == 'present') {
+                        echo "selected";
+                      } ?>>PRESENT</option>
+                      <option value="failed" <?php if ($value == 'failed') {
+                        echo "selected";
+                      } ?>>FAILED</option>
+                      <option value="passed" <?php if ($value == 'passed') {
+                        echo "selected";
+                      } ?>>PASSED</option>
+                    </select>
+                  </div>
+
                 <?php
+                  }
+                }
               }
               ?>
+              <button id="close-statuses-button" type="button" name="button">Submit</button>
             </div>
           </div>
         <?php

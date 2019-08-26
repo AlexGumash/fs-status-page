@@ -119,4 +119,20 @@
 
 .statuses {
   display: none;
+  width: 100%;
+  border-top: 1px solid grey;
+  padding-top: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: rgb(231, 231, 231);
 }
