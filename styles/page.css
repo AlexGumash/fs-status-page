@@ -49,6 +49,14 @@
   align-items: center;
 }
 
+.form-container-files {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 .form-input-div {
   width: 100%;
   display: flex;
@@ -135,4 +143,21 @@
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: rgb(231, 231, 231);
+}
+
+.upload-files {
+  display: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.link {
+  margin-bottom: 10px;
 }

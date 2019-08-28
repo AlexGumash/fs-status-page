@@ -6,7 +6,6 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src='../scripts/toggle.js'></script>
   </head>
   <body>
     <div class="container-page">
@@ -28,52 +27,16 @@
             <hr>
 
             <?php
-              if ($_SESSION['rights'] == 'nr') {
-                ?>
-                <div class="create-news">
-                  <!-- <div id="create-news-button" class="create-news-button">
-                    <span>Create news</span>
-                  </div> -->
-                  <button id="create-news-button" type="button" name="button">Create news</button>
-
-                  <div class="create-news-form">
-
-                    <form class="" action="../handlers/create_news.php" method="post">
-                      <div class="form-container">
-
-                        <div class="form-input-div">
-                          <span>Title:</span>
-                          <input type="text" name="title" value="">
-                        </div>
-
-                        <div class="form-input-div-textarea">
-                          <span>Content:</span>
-                          <textarea name="content" rows="8" style="width: 100%" required></textarea>
-                        </div>
-                        
-                        <input type="submit" name="submit-button-news" value="Submit">
-                      </div>
-
-                    </form>
-
-                  </div>
-                </div>
-            <?php
-              }
-
-            ?>
-
-            <?php
           } else {
         ?>
         <form class="" action="../handlers/loginout.php" method="post">
           <div class="form-container">
-            <div class="form-input-div">
+            <div class="form-input-div" style="width:70%">
               <span>Login:</span>
               <input type="text" name="login" value="" required>
             </div>
 
-            <div class="form-input-div">
+            <div class="form-input-div" style="width:70%">
               <span>Pass:</span>
               <input type="password" name="password" value="" required>
             </div>

@@ -11,7 +11,11 @@ $names = array(
   "weight" => "Weight: ",
   "rain" => "Rain Test",
   "e_inspection" => "E-Inspection",
-  "accumulator" => "Accumulator Inspection"
+  "accumulator" => "Accumulator Inspection",
+  "passed" => "PASSED",
+  "failed" => "FAILED",
+  "none" => "NONE",
+  "present" => "PRESENT"
 );
 
 ?>

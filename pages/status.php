@@ -13,11 +13,13 @@
         $(this).children('.statuses').show()
       })
 
-      $('#close-statuses-button').click(function(event) {
-
-        $('#close-statuses-button').parent().hide()
-
-      })
+      $(document).mouseup(function (e){ // событие клика по веб-документу
+    		var div = $(".statuses"); // тут указываем ID элемента
+    		if (!div.is(e.target) // если клик был не по нашему блоку
+    		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+    			div.hide(); // скрываем его
+    		}
+    	});
 
       function changeStatus(test_name, number, team_category) {
         var test_status = $(event.target).val()
@@ -93,27 +95,52 @@
                     ?>
                       <div class="status">
                         <span><?php echo $names[$key] ?></span>
-                        <input type="text" name="car_weight" value="<?php echo $inspection['weight']; ?>" style="width: 80px" onchange="changeWeight('<?php echo $team['number']?>', '<?php echo $team['category'] ?>')">
+
+                        <?php
+                          if ($_SESSION['rights'] == 's') {
+                            ?>
+                            <input type="text" name="car_weight" value="<?php echo $inspection['weight']; ?>" style="width: 80px" onchange="changeWeight('<?php echo $team['number']?>', '<?php echo $team['category'] ?>')">
+                            <span>[kg]</span>
+                            <?php
+                          } else {
+                            ?>
+                            <span><?php echo $value; ?></span>
+                            <?php
+                          }
+                        ?>
+
                       </div>
                     <?php
                   } else {
                   ?>
                   <div class="status">
                     <span><?php echo $names[$key] ?></span>
-                    <select class="" name="status-selector" onchange="changeStatus('<?php echo $key?>', '<?php echo $team['number']?>', '<?php echo $team['category'] ?>')">
-                      <option value="none" <?php if ($value == 'none') {
-                        echo "selected";
-                      } ?>>NONE</option>
-                      <option value="present" <?php if ($value == 'present') {
-                        echo "selected";
-                      } ?>>PRESENT</option>
-                      <option value="failed" <?php if ($value == 'failed') {
-                        echo "selected";
-                      } ?>>FAILED</option>
-                      <option value="passed" <?php if ($value == 'passed') {
-                        echo "selected";
-                      } ?>>PASSED</option>
-                    </select>
+
+                    <?php
+                      if ($_SESSION['rights'] == 's') {
+                        ?>
+                        <select class="" name="status-selector" onchange="changeStatus('<?php echo $key?>', '<?php echo $team['number']?>', '<?php echo $team['category'] ?>')">
+                          <option value="none" <?php if ($value == 'none') {
+                            echo "selected";
+                          } ?>>NONE</option>
+                          <option value="present" <?php if ($value == 'present') {
+                            echo "selected";
+                          } ?>>PRESENT</option>
+                          <option value="failed" <?php if ($value == 'failed') {
+                            echo "selected";
+                          } ?>>FAILED</option>
+                          <option value="passed" <?php if ($value == 'passed') {
+                            echo "selected";
+                          } ?>>PASSED</option>
+                        </select>
+                        <?php
+                      } else {
+                        ?>
+                        <span><?php echo $names[$value] ?></span>
+                        <?php
+                      }
+                    ?>
+
                   </div>
 
                 <?php
@@ -121,7 +148,6 @@
                 }
               }
               ?>
-              <button id="close-statuses-button" type="button" name="button">Submit</button>
             </div>
           </div>
         <?php
