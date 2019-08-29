@@ -1,6 +1,7 @@
 @import "reset.css";
 @import "main-page.css";
 @import "page.css";
+@import "adaptive.css";
 
 body {
   font-family: Arial, sans-serif;

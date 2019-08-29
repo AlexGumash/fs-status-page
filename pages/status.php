@@ -41,19 +41,28 @@
           console.log(result);
         })
       }
+
+    // $('#car-number').bind("change keyup input click", function() {
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "../handlers/search.php", //Путь к обработчику
+    //         dаta: {'number': this.value},
+    //         response: 'text',
+    //         success: function(data){
+    //             $(".list-container").html(data).fadeIn(); //Выводим полученые данные в списке
+    //        }
+    //    })
+    // })
     </script>
 
   </head>
   <body>
     <div class="container-page">
 
-      <div class="page-title">
-        Status
-      </div>
-
-      <div class="search">
-
-      </div>
+      <!-- <div class="search">
+        <span>Car number: </span>
+        <input id="car-number" type="text" name="car-number" value="" placeholder="000">
+      </div> -->
 
       <div class="list-container">
         <?php

@@ -31,17 +31,19 @@
         ?>
         <form class="" action="../handlers/loginout.php" method="post">
           <div class="form-container">
-            <div class="form-input-div" style="width:70%">
-              <span>Login:</span>
-              <input type="text" name="login" value="" required>
-            </div>
+            <div class="profile-container">
+              <div class="form-input-div" style="width:70%">
+                <span>Login:</span>
+                <input type="text" name="login" value="" required>
+              </div>
 
-            <div class="form-input-div" style="width:70%">
-              <span>Pass:</span>
-              <input type="password" name="password" value="" required>
-            </div>
+              <div class="form-input-div" style="width:70%">
+                <span>Pass:</span>
+                <input type="password" name="password" value="" required>
+              </div>
 
-            <input type="submit" name="submit-button-entry" value="Submit">
+              <input type="submit" name="submit-button-entry" value="Submit">
+            </div>
           </div>
         </form>
       <?php } ?>

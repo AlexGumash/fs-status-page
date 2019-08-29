@@ -13,10 +13,6 @@
   <body>
     <div class="container-page">
 
-      <div class="page-title">
-        News
-      </div>
-
       <?php
         if ($_SESSION['rights'] == 'nr') {
           ?>

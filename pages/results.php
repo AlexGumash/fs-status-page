@@ -15,9 +15,6 @@
   </head>
   <body>
     <div class="container-page">
-      <div class="page-title" style="margin-bottom: 20px;">
-        Results
-      </div>
       <?php
         if ($_SESSION['rights'] == 'nr') {
 

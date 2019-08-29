@@ -27,20 +27,32 @@
         <div class="header-menu">
           <ul class="menu-list" id="menu-list">
             <li class="menu-list-item">
-              <a data_target="pages/news.php">News</a>
+              <a data_target="pages/news.php">
+                <div class="menu-link-block">
+                  <span>News</span>
+                </div>
+              </a>
             </li>
             <li class="menu-list-item">
-              <a data_target="pages/status.php">Status</a>
+              <a data_target="pages/status.php">
+                <div class="menu-link-block">
+                  <span>Status</span>
+                </div>
+              </a>
             </li>
             <li class="menu-list-item" style="margin-right: 0">
-              <a data_target="pages/results.php">Results</a>
+              <a data_target="pages/results.php">
+                <div class="menu-link-block">
+                  <span>Results</span>
+                </div>
+              </a>
             </li>
           </ul>
         </div>
 
       </div>
       <div id="content" style="width: 100%">
-        
+
       </div>
     </div>
   </body>

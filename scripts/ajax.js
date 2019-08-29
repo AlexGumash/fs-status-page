@@ -9,10 +9,11 @@ $(function(){
     var pageName = $(this).attr('data_target');
     $.ajax({
       url: pageName,
-      cache: false,
+      cache: true,
       success: function(html){
         $("#content").html(html);
       }
     });
   });
+
 });

@@ -49,6 +49,14 @@
   align-items: center;
 }
 
+.profile-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .form-container-files {
   width: 100%;
   display: flex;
@@ -72,6 +80,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 80%;
 }
 
 .create-news-form {
