@@ -10,6 +10,9 @@ $(function(){
     $.ajax({
       url: pageName,
       cache: true,
+      beforeSend: function(){
+        $('#content').html('<img id="imgcode" src="../images/Spinner.gif">');
+      },
       success: function(html){
         $("#content").html(html);
       }

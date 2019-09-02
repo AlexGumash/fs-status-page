@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FSR</title>
+    <link rel="icon" href="images/fsr_2019_logo.png">
+    <title>FSR 2019</title>
     <link rel="stylesheet" href="styles/main.css">
     <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src='scripts/ajax.js'></script>
@@ -50,7 +51,7 @@
           </ul>
         </div>
 
-      </div>
+        </div>
       <div id="content" style="width: 100%">
 
       </div>

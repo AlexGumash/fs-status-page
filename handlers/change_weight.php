@@ -6,6 +6,8 @@ date_default_timezone_set('Europe/Kaliningrad');
   $car_number = $_REQUEST['car_number'];
   $weight = $_REQUEST['car_weight'];
   $category = $_REQUEST['category'];
+  $user = $_SESSION['login'];
+  echo $user;
 
   $time = date('d.m G:i');
 
@@ -16,6 +18,14 @@ date_default_timezone_set('Europe/Kaliningrad');
   }
 
   $result = mysqli_query($date, $query);
+
+  $log_message = "$car_number: " . "weight - " . "$weight";
+  $query_log = "INSERT INTO logs VALUES (NULL, NULL, '$log_message', '$user')";
+  $result_log = mysqli_query($date, $query_log);
+
+  if (!$result_log) {
+    echo mysqli_error($date);
+  }
 
   if (!$result) {
     echo mysqli_error($date);
