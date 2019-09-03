@@ -7,7 +7,6 @@ date_default_timezone_set('Europe/Kaliningrad');
   $weight = $_REQUEST['car_weight'];
   $category = $_REQUEST['category'];
   $user = $_SESSION['login'];
-  echo $user;
 
   $time = date('d.m G:i');
 

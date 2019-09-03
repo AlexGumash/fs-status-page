@@ -15,7 +15,7 @@
   .menu-list {
     width: 70%
   }
-  .links {
+  .links, .upload-files-container {
     width: 70%;
   }
   .profile-container {
@@ -34,7 +34,7 @@
   .menu-list {
     width: 60%;
   }
-  .links {
+  .links, .upload-files-container {
     width: 60%;
   }
   .profile-container {
@@ -53,7 +53,7 @@
   .menu-list {
     width: 50%;
   }
-  .links {
+  .links, .upload-files-container {
     width: 50%;
   }
   .profile-container {
@@ -72,7 +72,7 @@
   .menu-list {
     width: 50%;
   }
-  .links {
+  .links, .upload-files-container {
     width: 50%;
   }
   .profile-container {

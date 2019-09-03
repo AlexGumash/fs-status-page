@@ -154,8 +154,13 @@
   background-color: rgb(231, 231, 231);
 }
 
+.upload-files-container {
+  width: 80%;
+}
+
 .upload-files {
   display: none;
+  align-self: flex-start;
 }
 
 .links {
@@ -169,4 +174,32 @@
 
 .link {
   margin-bottom: 10px;
+}
+
+.result-table-div {
+  max-width: 100%;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.result-table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.result-table-cell {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.cross {
+  background-image: url('../images/cross.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.hide  {
+  display: none;
 }

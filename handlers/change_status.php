@@ -8,7 +8,6 @@ date_default_timezone_set('Europe/Kaliningrad');
   $status = $_REQUEST['status'];
   $category = $_REQUEST['category'];
   $user = $_SESSION['login'];
-  echo $user;
 
   $time = date('d.m G:i');
 

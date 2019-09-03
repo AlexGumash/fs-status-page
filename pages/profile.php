@@ -16,12 +16,15 @@
 
             <form class="" action="../handlers/loginout.php" method="post">
               <div class="form-container">
-                <div class="form-input-div" style="width: 40%">
-                  <span>Login: </span>
-                  <span><?php echo $_SESSION['login']; ?></span>
-                </div>
+                <div class="profile-container">
+                  <div class="form-input-div" style="width: 50%">
+                    <span>Login: </span>
+                    <span><?php echo $_SESSION['login']; ?></span>
+                  </div>
 
-                <input type="submit" name="submit-button-exit" value="Exit">
+                  <input type="submit" name="submit-button-exit" value="Exit">
+
+                </div>
               </div>
             </form>
             <hr>
