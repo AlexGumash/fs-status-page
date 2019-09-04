@@ -26,12 +26,32 @@
       $('#upload-files-button').click(function() {
         $('.upload-files').toggle()
       })
+
+      function deleteFile(id, filename) {
+        console.log(id);
+        $.ajax({
+          type: "post",
+          url: "../handlers/delete_file.php",
+          data: {file_id: id, file: filename},
+          beforeSend: function(){
+            var parentLink = event.target.parentElement.parentElement;
+            parentLink.classList.add('hide');
+          }
+        }).done(function(result){
+          console.log(result);
+          // $("p#44.test").css("background-color","yellow");
+        })
+
+      }
     </script>
   </head>
   <body>
     <div class="container-page">
 
       <div class="result-table-div">
+        <div class="result-label">
+          <span>Technical Inspection Status</span>
+        </div>
         <table class="result-table">
 
           <tr class="result-table-row">
@@ -63,7 +83,7 @@
               <span>Tilt test</span>
             </th>
             <th class="result-table-cell">
-              <span>Noise/rain test</span>
+              <span>Noise/Rain test</span>
             </th>
             <th class="result-table-cell">
               <span>Brake test</span>
@@ -169,6 +189,15 @@
           while ($result = mysqli_fetch_array($res, MYSQL_ASSOC)) {
             ?>
             <div class="link">
+              <?php
+                if ($_SESSION['rights'] == 'nr') {
+                  ?>
+                    <div class="delete-file" onclick="deleteFile(<?php echo $result['id']; ?>, '<?php echo $result['uri']; ?>')">
+                      <img class="delete-file-icon" src="../images/delete.png" alt="">
+                    </div>
+                  <?php
+                }
+              ?>
               <span><?php echo $result['text'] ?> - </span>
               <a href="../result_files/<?php echo $result['uri']; ?>" download><?php echo $result['uri']; ?></a>
             </div>

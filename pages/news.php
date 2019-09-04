@@ -49,22 +49,28 @@
 
       ?>
 
-
-
-
-
-
       <div class="content">
         <?php
           $query = "SELECT * FROM news ORDER BY time DESC";
           $res = mysqli_query($date, $query);
 
           while ($news_item = mysqli_fetch_array($res, MYSQL_ASSOC)) {
+            $datetime = $news_item['time'];
+            $datetime_arr = explode(" ", $datetime);
+            $date = $datetime_arr[0];
+            $time = $datetime_arr[1];
+            $date_arr = explode("-", $date);
+            $time_arr = explode(":", $time);
             ?>
             <div class="news_item">
 
               <div class="news_item_header">
-                <span><?php echo $news_item['title']; ?></span>
+                <span style="font-weight: bold"><?php echo $news_item['title']; ?></span>
+              </div>
+
+              <div class="news_item_info">
+                <span><?php echo $date_arr[2]?><?php echo "-"; ?><?php echo $date_arr[1]; ?></span>
+                <span><?php echo " "; ?><?php echo $time_arr[0]?><?php echo ":"; ?><?php echo $time_arr[1]; ?></span>
               </div>
 
               <div class="news_item_content">

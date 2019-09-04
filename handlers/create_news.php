@@ -7,9 +7,9 @@ if (isset($_REQUEST['submit-button-news'])) {
 
   $title = $_REQUEST['title'];
   $content = $_REQUEST['content'];
-  $time = date('d.m G:i');
+  // $time = date('d.m G:i');
 
-  $query = "INSERT INTO news (id, time, title, content) VALUES (NULL, '$time', '$title', '$content')";
+  $query = "INSERT INTO news (id, time, title, content) VALUES (NULL, NULL, '$title', '$content')";
   $result = mysqli_query($date, $query);
   if (!$result) {
     echo mysqli_error($date);

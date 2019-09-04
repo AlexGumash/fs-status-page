@@ -19,10 +19,8 @@ if(isset($_FILES['result-file'])){
   }
 
   $text = $_REQUEST['link-text'];
-  date_default_timezone_set('Europe/Kaliningrad');
-  $time = date('d.m G:i');
 
-  $query = "INSERT INTO results (id, text, uri, time) VALUES ('NULL', '$text', '$file_name', '$time')";
+  $query = "INSERT INTO results (id, text, uri, time) VALUES (NULL, '$text', '$file_name', NULL)";
 		$result = mysqli_query($date, $query);
     if (!$result) {
       echo mysqli_error($date);

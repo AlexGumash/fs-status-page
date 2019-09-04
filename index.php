@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,13 +37,19 @@
                 </div>
               </a>
             </li>
-            <li class="menu-list-item">
-              <a data_target="pages/status.php">
-                <div class="menu-link-block">
-                  <span>Status</span>
-                </div>
-              </a>
-            </li>
+            <?php
+              if ($_SESSION['rights'] == 's') {
+                ?>
+                <li class="menu-list-item">
+                  <a data_target="pages/status.php">
+                    <div class="menu-link-block">
+                      <span>Status</span>
+                    </div>
+                  </a>
+                </li>
+                <?php
+              }
+            ?>
             <li class="menu-list-item" style="margin-right: 0">
               <a data_target="pages/results.php">
                 <div class="menu-link-block">

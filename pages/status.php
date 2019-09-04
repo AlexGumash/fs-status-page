@@ -83,23 +83,7 @@
         })
 
       }
-      // function searchFilter() {
-      //   var input = document.getElementById('search-input');
-      //   var inputValue = input.value;
-      //   console.log(inputValue);
-      //   var teams = document.getElementsByClassName('team-name');
-      //   Object.values(teams).forEach(function(name) {
-      //     let carNumber = name.innerText.split(' ')[0];
-      //     let parentDiv = name.parentElement
-      //
-      //     if (carNumber.search(inputValue) == -1) {
-      //       $(parentDiv).hide();
-      //     } else {
-      //       $(parentDiv).css("display", "flex");
-      //     }
-      //   })
-      //   // console.log("---------------------");
-      // }
+      
 
       document.querySelector('#search-input').oninput = function () {
         let val = this.value.trim();
