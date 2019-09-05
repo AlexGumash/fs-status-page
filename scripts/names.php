@@ -15,7 +15,9 @@ $names = array(
   "passed" => "PASSED",
   "failed" => "FAILED",
   "none" => "NONE",
-  "present" => "PRESENT"
+  "present" => "PRESENT",
+  "cv" => "CV",
+  "ev" => "EV"
 );
 
 ?>

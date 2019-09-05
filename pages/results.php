@@ -1,21 +1,23 @@
 <?php
   session_start();
   include '../database/connection.php';
+  include '../scripts/names.php';
 
   function getColor($status) {
     if ($status == 'failed') {
-      return 'rgb(204, 65, 49)';
+      return 'rgb(255, 36, 0)';
     }
     if ($status == 'passed') {
-      return 'rgb(121, 193, 85)';
+      return 'rgb(86, 255, 1)';
     }
     if ($status == 'present') {
-      return 'rgb(230, 212, 103)';
+      return 'rgb(245, 249, 6)';
     }
     if ($status == 'none') {
       return 'rgb(231, 231, 231)';
     }
   }
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -47,11 +49,11 @@
   </head>
   <body>
     <div class="container-page">
+      <div class="result-label">
+        <span>Technical Inspection Status</span>
+      </div>
 
       <div class="result-table-div">
-        <div class="result-label">
-          <span>Technical Inspection Status</span>
-        </div>
         <table class="result-table">
 
           <tr class="result-table-row">
@@ -104,18 +106,61 @@
               ?>
 
               <tr class="result-table-row">
-                <td class="result-table-cell"><?php echo $team['number'] ?></td>
-                <td class="result-table-cell"><?php echo $team['uni'] ?></td>
-                <td class="result-table-cell"><?php echo $team['name'] ?></td>
-                <td class="result-table-cell"><?php echo $team['category'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['pre_inspection']); ?>"><?php echo $team['pre_inspection'] ?></td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <?php echo $team['number'] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <?php echo $team['uni'] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <?php echo $team['name'] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['category']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['pre_inspection']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['pre_inspection']] ?>
+                  </div>
+                </td>
                 <td class="result-table-cell cross"></td>
                 <td class="result-table-cell cross"></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['m_inspection']); ?>"><?php echo $team['m_inspection'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['tilt']); ?>"><?php echo $team['tilt'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['noise']); ?>"><?php echo $team['noise'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['brake']); ?>"><?php echo $team['brake'] ?></td>
-                <td class="result-table-cell"><?php echo $team['weight'] ?></td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['m_inspection']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['m_inspection']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['tilt']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['tilt']]?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['noise']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['noise']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['brake']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['brake']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <span style="font-weight: bold">
+                      <?php echo $team['weight'] ?>
+                       [kg]
+                    </span>
+                  </div>
+                </td>
               </tr>
 
               <?php
@@ -133,18 +178,69 @@
               ?>
 
               <tr class="result-table-row">
-                <td class="result-table-cell"><?php echo $team['number'] ?></td>
-                <td class="result-table-cell"><?php echo $team['uni'] ?></td>
-                <td class="result-table-cell"><?php echo $team['name'] ?></td>
-                <td class="result-table-cell"><?php echo $team['category'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['pre_inspection']); ?>"><?php echo $team['pre_inspection'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['accumulator']); ?>"><?php echo $team['accumulator'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['e_inspection']); ?>"><?php echo $team['e_inspection'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['m_inspection']); ?>"><?php echo $team['m_inspection'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['tilt']); ?>"><?php echo $team['tilt'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['rain']); ?>"><?php echo $team['rain'] ?></td>
-                <td class="result-table-cell" style="background-color: <?php echo getColor($team['brake']); ?>"><?php echo $team['brake'] ?></td>
-                <td class="result-table-cell"><?php echo $team['weight'] ?></td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <?php echo $team['number'] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <?php echo $team['uni'] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <?php echo $team['name'] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['category']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['pre_inspection']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['pre_inspection']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['accumulator']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['accumulator']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['e_inspection']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['e_inspection']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['m_inspection']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['m_inspection']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['tilt']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['tilt']]?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['rain']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['rain']]?>
+                  </div>
+                </td>
+                <td class="result-table-cell" style="background-color: <?php echo getColor($team['brake']); ?>">
+                  <div class="inside-cell">
+                    <?php echo $names[$team['brake']] ?>
+                  </div>
+                </td>
+                <td class="result-table-cell">
+                  <div class="inside-cell">
+                    <span style="font-weight: bold">
+                      <?php echo $team['weight'] ?>
+                       [kg]
+                    </span>
+                  </div>
+                </td>
               </tr>
 
               <?php
