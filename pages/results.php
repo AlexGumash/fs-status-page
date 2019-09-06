@@ -41,7 +41,6 @@
           }
         }).done(function(result){
           console.log(result);
-          // $("p#44.test").css("background-color","yellow");
         })
 
       }

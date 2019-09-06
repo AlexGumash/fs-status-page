@@ -15,6 +15,9 @@
   .menu-list {
     width: 70%
   }
+  .create-news {
+    width: 70%;
+  }
   .links, .upload-files-container {
     width: 70%;
   }
@@ -32,6 +35,9 @@
     width: 60%;
   }
   .menu-list {
+    width: 60%;
+  }
+  .create-news {
     width: 60%;
   }
   .links, .upload-files-container {
@@ -53,6 +59,9 @@
   .menu-list {
     width: 50%;
   }
+  .create-news {
+    width: 50%;
+  }
   .links, .upload-files-container {
     width: 50%;
   }
@@ -70,6 +79,9 @@
     width: 50%;
   }
   .menu-list {
+    width: 50%;
+  }
+  .create-news {
     width: 50%;
   }
   .links, .upload-files-container {

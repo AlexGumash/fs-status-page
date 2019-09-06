@@ -4,7 +4,6 @@ include '../scripts/translit.php';
 ?>
 <?php
 session_start();
-date_default_timezone_set('Europe/Kaliningrad');
 
 
 function incoming_files() {
@@ -33,19 +32,18 @@ function incoming_files() {
 }
 
 
-if (isset($_REQUEST['submit-button-news'])) {
+if (isset($_REQUEST['edit-submit'])) {
+  $title = $_REQUEST['new-title'];
+  $content = $_REQUEST['new-content'];
+  $news_id = $_REQUEST['id'];
 
-  $title = $_REQUEST['title'];
-  $content = $_REQUEST['content'];
-
-  $query = "INSERT INTO news (id, time, title, content) VALUES (NULL, NULL, '$title', '$content')";
+  $query = "UPDATE news SET time = NULL, title = '$title', content = '$content' WHERE id = '$news_id'";
   $result = mysqli_query($date, $query);
   if (!$result) {
     echo mysqli_error($date);
   }
 
-  if(isset($_FILES['news-files'])){
-    $news_id = mysqli_insert_id($date);
+  if(isset($_FILES['new-news-files'])){
     $files2 = incoming_files();
     foreach ($files2 as $key1 => $value1) {
       $file_tmp = $value1['tmp_name'];
