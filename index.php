@@ -19,12 +19,7 @@
 
         <div class="header-top">
           <div class="header-top-container">
-            <span style="margin-right: 20px">Formula Student Russia 2019</span>
-            <span>
-              <a id="profile" data_target="pages/profile.php">
-                <img class="profile-icon" src="images/user.png" alt="profile icon">
-              </a>
-            </span>
+            <img src="images/fsr_2019_logo.png" alt="" style="width: 150px;">
           </div>
         </div>
 
@@ -50,12 +45,19 @@
                 <?php
               }
             ?>
-            <li class="menu-list-item" style="margin-right: 0">
+            <li class="menu-list-item">
               <a data_target="pages/results.php">
                 <div class="menu-link-block">
                   <span>Results</span>
                 </div>
               </a>
+            </li>
+            <li class="menu-list-item" style="margin-right: 0">
+              <div class="menu-link-block" style="padding: 6px">
+                <a id="profile" data_target="pages/profile.php">
+                  <img class="profile-icon" src="images/user.png" alt="profile icon">
+                </a>
+              </div>
             </li>
           </ul>
         </div>
